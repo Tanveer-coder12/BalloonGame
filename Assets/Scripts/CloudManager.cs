@@ -20,7 +20,7 @@ public class CloudManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1.5f);
             float randomrange = Random.Range(-2.5f, 2.5f);
                 
             int i = Random.Range(0, cloudsprefab.Length);    
