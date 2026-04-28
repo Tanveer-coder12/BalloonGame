@@ -5,11 +5,22 @@ public class Gamemanager : MonoBehaviour
 {
     public GameObject Balloonpref;
     public Transform spawnpos;
+    public BalloonManager balloonManager;
+    public GameObject gameOverPanel;
+
+    private void Awake() {
+        balloonManager.OnGameOver += BalloonManager_OnGameOver;
+    }
+
+    private void BalloonManager_OnGameOver(object sender, BalloonManager.OnGameOverEventArgs e) {
+        gameOverPanel.SetActive(true);
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         StartCoroutine(Ballspwaning());
+        
     }
 
     // Update is called once per frame
