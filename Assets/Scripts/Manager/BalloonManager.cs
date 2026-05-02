@@ -13,6 +13,12 @@ public class BalloonManager : MonoBehaviour
             {
                 
                 Time.timeScale = 0f;
+
+        void OnMouseDown() // ya jo bhi pop method hai
+{
+    ScoreManager.instance.AddScore(1);
+    Destroy(gameObject);
+}
             }
         }
     }
