@@ -16,7 +16,9 @@ public class balloon : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
             if(hit.collider != null && hit.collider.gameObject == gameObject)
             {
+
                 Destroy(gameObject);
+
             }
         }
     }
