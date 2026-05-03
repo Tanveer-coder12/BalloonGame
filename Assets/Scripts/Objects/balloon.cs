@@ -26,6 +26,9 @@ public class balloon : MonoBehaviour
     {
         transform.Translate(0,Vector2.up.y*Speed * Time.deltaTime,0);
     }
-   
-
+    void OnMouseDown() // ya jo bhi pop method hai
+{
+    ScoreManager.instance.AddScore(1);
+    Destroy(gameObject);
+}
 }
