@@ -7,16 +7,16 @@ public class balloon : MonoBehaviour
 
     public float Speed;
 
-    // Update is called once per frame
     void Update()
     {
         BallMovement();
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            if(hit.collider != null && hit.collider.gameObject == gameObject)
+            if (hit.collider != null && hit.collider.gameObject == gameObject)
             {
 
+                Gamemanager.instance.addscore();
                 Destroy(gameObject);
 
             }
@@ -24,11 +24,6 @@ public class balloon : MonoBehaviour
     }
     public void BallMovement()
     {
-        transform.Translate(0,Vector2.up.y*Speed * Time.deltaTime,0);
+        transform.Translate(0, Vector2.up.y * Speed * Time.deltaTime, 0);
     }
-    void OnMouseDown() // ya jo bhi pop method hai
-{
-    ScoreManager.instance.AddScore(1);
-    Destroy(gameObject);
-}
 }

@@ -3,26 +3,26 @@ using UnityEngine;
 public class BalloonManager : MonoBehaviour
 {
     public int Count = 0;
-    public GameObject Life1, Life2, Life3;  
+    public GameObject Life1, Life2, Life3;
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Balloon")
+        if (collision.gameObject.tag == "Balloon")
         {
             Count++;
-            if(Count == 1)
+            if (Count == 1)
             {
                 Life3.SetActive(false);
             }
-            else if(Count == 2)
+            else if (Count == 2)
             {
                 Life2.SetActive(false);
             }
-            else if(Count == 3)
+            else if (Count == 3)
             {
                 Life1.SetActive(false);
             }
             Destroy(collision.gameObject);
-            if(Count>=3)
+            if (Count >= 3)
             {
                 foreach (GameObject balloon in GameObject.FindGameObjectsWithTag("Balloon"))
                 {
@@ -30,11 +30,6 @@ public class BalloonManager : MonoBehaviour
                 }
                 Time.timeScale = 0f;
 
-        void OnMouseDown() // ya jo bhi pop method hai
-{
-    ScoreManager.instance.AddScore(1);
-    Destroy(gameObject);
-}
             }
         }
     }

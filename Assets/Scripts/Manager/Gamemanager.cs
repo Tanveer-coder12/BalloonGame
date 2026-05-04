@@ -1,22 +1,33 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Gamemanager : MonoBehaviour
 {
     public GameObject Balloonpref;
     public Transform spawnpos;
+    public static Gamemanager instance;
+    public int score = 0;
+    public Text Scoretxt;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private void Awake()
+    { 
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else{
+            Destroy(gameObject);
+        }
+
+    }
+    
+
     void Start()
+
     {
         StartCoroutine(Ballspwaning());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-        
     }
     public IEnumerator Ballspwaning()
     {
@@ -30,6 +41,11 @@ public class Gamemanager : MonoBehaviour
 
 
         }
+    }
+    public void addscore()
+    {
+        score += 1;
+        Scoretxt.text = "Score: " + score;
     }
 
 }
