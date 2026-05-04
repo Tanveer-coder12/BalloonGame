@@ -6,7 +6,12 @@ public class balloon : MonoBehaviour
 
 
     public float Speed;
+    public int score = 0;
 
+    private void Start()
+    {
+        score = Gamemanager.instance.score;
+    }
     void Update()
     {
         BallMovement();
@@ -17,6 +22,7 @@ public class balloon : MonoBehaviour
             {
 
                 Gamemanager.instance.addscore();
+                
                 Destroy(gameObject);
 
             }
@@ -24,6 +30,26 @@ public class balloon : MonoBehaviour
     }
     public void BallMovement()
     {
-        transform.Translate(0, Vector2.up.y * Speed * Time.deltaTime, 0);
+        if (score >= 0 && score <= 10)
+        {
+            transform.Translate(0, Vector2.up.y * Speed * Time.deltaTime, 0);
+
+        }
+        else if(score > 10 && score <= 20)
+        {
+            transform.Translate(0, Vector2.up.y * Speed * Time.deltaTime * 1.5f, 0);
+        }
+        else if (score > 20 && score <= 30)
+        {
+            transform.Translate(0, Vector2.up.y * Speed * Time.deltaTime * 2f, 0);
+        }
+        else if (score > 30 && score <= 40)
+        {
+            transform.Translate(0, Vector2.up.y * Speed * Time.deltaTime * 2.5f, 0);
+        }
+         else if (score > 40)
+        {
+            transform.Translate(0, Vector2.up.y * Speed * Time.deltaTime * 3f, 0);
+        }
     }
 }

@@ -7,7 +7,7 @@ public class Gamemanager : MonoBehaviour
     public GameObject Balloonpref;
     public Transform spawnpos;
     public static Gamemanager instance;
-    public int score = 0;
+    public int score;
     public Text Scoretxt;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -44,7 +44,9 @@ public class Gamemanager : MonoBehaviour
     }
     public void addscore()
     {
+        
         score += 1;
+
         Scoretxt.text = "Score: " + score;
     }
 
