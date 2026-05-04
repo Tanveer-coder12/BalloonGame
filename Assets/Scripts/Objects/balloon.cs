@@ -39,15 +39,15 @@ public class balloon : MonoBehaviour
         {
             transform.Translate(0, Vector2.up.y * Speed * Time.deltaTime * 1.5f, 0);
         }
-        else if (score > 20 && score <= 30)
+        else if (score > 20 && score <= 60)
         {
             transform.Translate(0, Vector2.up.y * Speed * Time.deltaTime * 2f, 0);
         }
-        else if (score > 30 && score <= 40)
+        else if (score > 60 && score <= 100)
         {
             transform.Translate(0, Vector2.up.y * Speed * Time.deltaTime * 2.5f, 0);
         }
-         else if (score > 40)
+         else if (score > 100)
         {
             transform.Translate(0, Vector2.up.y * Speed * Time.deltaTime * 3f, 0);
         }

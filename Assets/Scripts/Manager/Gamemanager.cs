@@ -41,20 +41,20 @@ public class Gamemanager : MonoBehaviour
             {
                 Spawntime = 1.5f;
             }
-            else if (score > 20 && score <= 30)
+            else if (score > 20 && score <= 60)
             {
                 Spawntime = 1f;
             }
-            else if (score > 30 && score <= 40)
+            else if (score > 60 && score <= 100)
             {
                 Spawntime = 0.5f;
             }
-            else if (score > 40)
+            else if (score > 100)
             {
                 Spawntime = 0.25f;
             }
             yield return new WaitForSeconds(Spawntime);
-            float randomrange = Random.Range(-2.5f, 2.5f);
+            float randomrange = Random.Range(-2.3f, 2.3f);
 
            
             Instantiate(Balloonpref, spawnpos.transform.position = new Vector2(randomrange,spawnpos.transform.position.y), Quaternion.identity);
@@ -62,6 +62,7 @@ public class Gamemanager : MonoBehaviour
 
         }
     }
+
     public void addscore()
     {
         
