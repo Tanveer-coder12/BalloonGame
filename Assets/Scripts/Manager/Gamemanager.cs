@@ -10,6 +10,9 @@ public class Gamemanager : MonoBehaviour
     public int score;
     public Text Scoretxt;
     public float Spawntime;
+    public int Highscore = 0;
+    public Text HighScore;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     { 
@@ -27,6 +30,7 @@ public class Gamemanager : MonoBehaviour
     void Start()
 
     {
+        PlayerPrefs.GetInt("Highscore", 0);
         StartCoroutine(Ballspwaning());
     }
     public IEnumerator Ballspwaning()
@@ -69,9 +73,14 @@ public class Gamemanager : MonoBehaviour
         score += 1;
 
         Scoretxt.text = "Score: " + score;
+        if(score > Highscore)
+            {
+                Highscore = score;
+                PlayerPrefs.SetInt("Highscore", Highscore);
+                HighScore.text = "Highscore: " + Highscore;
+                PlayerPrefs.Save();
+
+        }
     }
-    public void highscorefunc()
-    {
-        
-    }
+   
 }

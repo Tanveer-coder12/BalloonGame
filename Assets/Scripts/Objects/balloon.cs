@@ -7,13 +7,22 @@ public class balloon : MonoBehaviour
 
     public float Speed;
     public int score = 0;
-
+    int Highscore;
+    
     private void Start()
     {
         score = Gamemanager.instance.score;
     }
     void Update()
     {
+        if (score > Highscore)
+        {
+            Highscore = score;
+            PlayerPrefs.SetInt("HighScore", Highscore);
+            Gamemanager.instance.HighScore.text = "Highscore: " + Highscore;
+            PlayerPrefs.Save();
+
+        }
         BallMovement();
         if (Input.GetMouseButtonDown(0))
         {
@@ -26,6 +35,7 @@ public class balloon : MonoBehaviour
                 Destroy(gameObject);
 
             }
+
         }
     }
     public void BallMovement()

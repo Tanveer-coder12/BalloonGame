@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UiManager : MonoBehaviour
 {
     public GameObject PausePanel;
     public GameObject PauseButton;
+    public Text HighScore;
     private void Start()
     {
         PausePanel.SetActive(false);
