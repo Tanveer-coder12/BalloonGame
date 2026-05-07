@@ -35,6 +35,7 @@ public class BalloonManager : MonoBehaviour
                     Destroy(balloon);
                 }
                 Debug.Log("Game Over");
+                uimanager.GetComponent<UiManager>().GameOverPanel.SetActive(true);
                 uimanager.GetComponent<UiManager>().PauseButton.SetActive(false);
                 Time.timeScale = 0f;
 

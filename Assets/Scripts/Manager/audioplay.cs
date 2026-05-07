@@ -6,11 +6,6 @@ public class audioplay : MonoBehaviour
 
     public AudioClip clip;
 
-    // Update is called once per frame
-    void Update()
-    {
-      
-    }
     private void Start()
     {
         ad.clip = clip;

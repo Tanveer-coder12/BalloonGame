@@ -12,7 +12,7 @@ public class Gamemanager : MonoBehaviour
     public float Spawntime;
     public int Highscore = 0;
     public Text HighScore;
-
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     { 

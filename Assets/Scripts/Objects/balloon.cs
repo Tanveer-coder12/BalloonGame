@@ -8,10 +8,20 @@ public class balloon : MonoBehaviour
     public float Speed;
     public int score = 0;
     int Highscore;
-    
+    public SpriteRenderer sp;
+
     private void Start()
     {
+        sp = GetComponent<SpriteRenderer>();    
         score = Gamemanager.instance.score;
+    }
+    public void Hideballoon()
+    {
+        sp.GetComponent<SpriteRenderer>().enabled = false;
+    }
+    public void Showballoon()
+    {
+        sp.GetComponent<SpriteRenderer>().enabled = true;
     }
     void Update()
     {

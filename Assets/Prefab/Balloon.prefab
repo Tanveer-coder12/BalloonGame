@@ -143,6 +143,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::balloon
   Speed: 2
+  score: 0
+  sp: {fileID: 5433697955685918444}
 --- !u!50 &2561278231730587023
 Rigidbody2D:
   serializedVersion: 5
