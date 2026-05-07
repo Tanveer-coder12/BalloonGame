@@ -73,14 +73,7 @@ public class Gamemanager : MonoBehaviour
         score += 1;
 
         Scoretxt.text = "Score: " + score;
-        if(score > Highscore)
-            {
-                Highscore = score;
-                PlayerPrefs.SetInt("Highscore", Highscore);
-                HighScore.text = "Highscore: " + Highscore;
-                PlayerPrefs.Save();
-
-        }
+       
     }
    
 }
