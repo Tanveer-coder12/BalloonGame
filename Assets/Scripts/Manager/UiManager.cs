@@ -19,6 +19,7 @@ public class UiManager : MonoBehaviour
    {
         PausePanel.SetActive(true);  
         PauseButton.SetActive(false);
+       
         foreach (balloon bal in FindObjectsByType<balloon>(FindObjectsSortMode.None))
         {
             bal.Hideballoon();
