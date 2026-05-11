@@ -31,6 +31,9 @@ public class Gamemanager : MonoBehaviour
     {
 
         StartCoroutine(Ballspwaning());
+
+
+
     }
     public IEnumerator Ballspwaning()
     {
