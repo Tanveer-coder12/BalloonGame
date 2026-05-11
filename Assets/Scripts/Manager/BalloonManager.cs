@@ -1,14 +1,19 @@
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BalloonManager : MonoBehaviour
 {
     public int Count = 0;
     public GameObject Life1, Life2, Life3;
     public GameObject uimanager;
+    public Text Highscore;
 
-    private void Start()
+    public int HighscoreCount;
+
+    public void Start()
     {
-      
+        
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -34,7 +39,8 @@ public class BalloonManager : MonoBehaviour
                 {
                     Destroy(balloon);
                 }
-                Debug.Log("Game Over");
+                HighscoreCount = PlayerPrefs.GetInt("HighScore", 0);
+                Highscore.text = "HighScore : " + HighscoreCount;
                 uimanager.GetComponent<UiManager>().GameOverPanel.SetActive(true);
                 uimanager.GetComponent<UiManager>().PauseButton.SetActive(false);
                 Time.timeScale = 0f;

@@ -764,6 +764,7 @@ MonoBehaviour:
   Life2: {fileID: 1135134063}
   Life3: {fileID: 142882409}
   uimanager: {fileID: 157740973}
+  Highscore: {fileID: 2080417597}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

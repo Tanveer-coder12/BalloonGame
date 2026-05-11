@@ -28,9 +28,9 @@ public class Gamemanager : MonoBehaviour
     
 
     void Start()
-
     {
-        PlayerPrefs.GetInt("Highscore", 0);
+        
+        ShowHighScore();
         StartCoroutine(Ballspwaning());
     }
     public IEnumerator Ballspwaning()
@@ -66,14 +66,23 @@ public class Gamemanager : MonoBehaviour
 
         }
     }
-
+   
     public void addscore()
     {
         
         score += 1;
 
         Scoretxt.text = "Score: " + score;
-       
+
+        if (score > Highscore)
+        {
+            PlayerPrefs.SetInt("HighScore", score);
+        }
     }
-   
+   public void ShowHighScore()
+    {
+        score = PlayerPrefs.GetInt("HighScore",0);
+
+        HighScore.text = "HighScore : " + score;
+    }
 }

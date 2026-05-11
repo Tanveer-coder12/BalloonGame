@@ -6,10 +6,9 @@ public class balloon : MonoBehaviour
 
 
     public float Speed;
-    public int score = 0;
-    int Highscore;
+   
     public SpriteRenderer sp;
-
+    public int score;
     private void Start()
     {
         sp = GetComponent<SpriteRenderer>();    
@@ -25,14 +24,7 @@ public class balloon : MonoBehaviour
     }
     void Update()
     {
-        if (score > Highscore)
-        {
-            Highscore = score;
-            PlayerPrefs.SetInt("HighScore", Highscore);
-            Gamemanager.instance.HighScore.text = "Highscore: " + Highscore;
-            PlayerPrefs.Save();
-
-        }
+       
         BallMovement();
         if (Input.GetMouseButtonDown(0))
         {
