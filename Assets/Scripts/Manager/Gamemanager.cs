@@ -29,6 +29,8 @@ public class Gamemanager : MonoBehaviour
 
     void Start()
     {
+        Highscore = PlayerPrefs.GetInt("HighScore", 0);
+            HighScore.text = "High Score: " + Highscore;
 
         StartCoroutine(Ballspwaning());
 

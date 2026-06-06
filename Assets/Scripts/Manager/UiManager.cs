@@ -8,8 +8,12 @@ public class UiManager : MonoBehaviour
     public GameObject PauseButton;
     public GameObject GameOverPanel;
      balloon []balloonmove;
+    public GameObject soundOn;
+    public GameObject soundOFF;
     private void Start()
     {
+        soundOFF.SetActive(false);
+        soundOn.SetActive(true);
         balloonmove = FindObjectsByType<balloon>();
         GameOverPanel.SetActive(false); 
         PausePanel.SetActive(false);
@@ -47,5 +51,17 @@ public class UiManager : MonoBehaviour
         GameOverPanel.SetActive(false);
         Time.timeScale = 1;
        SceneManager.LoadScene("SampleScene");
+    }
+    public void SoundOn()
+    {
+        soundOn.SetActive(false);
+        GetComponent<audioplay>().ad.Pause();
+        soundOFF.SetActive(true);
+    }
+    public void soundoff()
+    {
+        soundOFF.SetActive(false);
+        GetComponent<audioplay>().ad.Play();
+        soundOn.SetActive(true);
     }
 }

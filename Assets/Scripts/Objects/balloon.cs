@@ -26,18 +26,16 @@ public class balloon : MonoBehaviour
     {
        
         BallMovement();
-        if (Input.GetMouseButtonDown(0))
+        if (Input.touchCount > 0)
         {
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            if (hit.collider != null && hit.collider.gameObject == gameObject)
+            Touch touch = Input.GetTouch(0);
+            Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+            RaycastHit2D hit = Physics2D.Raycast(touchPosition, Vector2.zero);
+            if(hit.collider != null && hit.collider.gameObject == gameObject)
             {
-
-                Gamemanager.instance.addscore();
-                
+                Gamemanager.instance.score++;
                 Destroy(gameObject);
-
             }
-
         }
     }
     public void BallMovement()
