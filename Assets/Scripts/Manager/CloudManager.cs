@@ -10,12 +10,6 @@ public class CloudManager : MonoBehaviour
     {
         StartCoroutine(SpawningClouds());
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public IEnumerator SpawningClouds()
     {
         while (true)

@@ -62,7 +62,7 @@ public class Gamemanager : MonoBehaviour
                 Spawntime = 0.25f;
             }
             yield return new WaitForSeconds(Spawntime);
-            float randomrange = Random.Range(-2.3f, 2.3f);
+            float randomrange = Random.Range(-2.1f, 2.1f);
 
            
             Instantiate(Balloonpref, spawnpos.transform.position = new Vector2(randomrange,spawnpos.transform.position.y), Quaternion.identity);
