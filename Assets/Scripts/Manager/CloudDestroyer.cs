@@ -6,7 +6,7 @@ public class CloudDestroyer : MonoBehaviour
     {
         if(collision != null)
         {
-            Destroy(collision.gameObject);
+           collision.gameObject.SetActive(false);
         }
     }
 }

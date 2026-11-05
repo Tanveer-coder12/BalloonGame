@@ -1,10 +1,12 @@
 using System.Collections;
+using System.Diagnostics;
 using UnityEngine;
 
 public class CloudManager : MonoBehaviour
 {
     public GameObject []cloudsprefab;
     public Transform SpawnPos;
+    public int limitedclouds;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,15 +14,17 @@ public class CloudManager : MonoBehaviour
     }
     public IEnumerator SpawningClouds()
     {
-        while (true)
+        for (int j = 0; j < limitedclouds; j++)
         {
             yield return new WaitForSeconds(1.5f);
             float randomrange = Random.Range(-2.5f, 2.5f);
-                
-            int i = Random.Range(0, cloudsprefab.Length);    
-            Instantiate(cloudsprefab[i], SpawnPos.transform.position = new Vector2(randomrange, transform.position.y), Quaternion.identity);
-                   
-           
+
+            int i = Random.Range(0, cloudsprefab.Length);
+            GameObject Clouds = Instantiate(cloudsprefab[i], SpawnPos.transform.position = new Vector2(randomrange, transform.position.y), Quaternion.identity);
+
         }
+                  
+          
+        
     }
 }
